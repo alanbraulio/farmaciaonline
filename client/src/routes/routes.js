@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Header from '../Components/Header/Header';
 import Home from '../Components/Home/Home';
 // import { UserStorage } from './UserContext';
 
@@ -9,7 +10,7 @@ function Rotas() {
     <div>
       <BrowserRouter>
         {/* <UserStorage> */}
-          {/* <Header /> */}
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             {/* <Route path="/login/*" element={<Login />} /> */}
