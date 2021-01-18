@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React  from 'react';
 import { HeaderApp, TextHeader } from './Styles.js';
 import { Link } from 'react-router-dom';
 // import { UserContext } from '../UserContext';

@@ -14,27 +14,8 @@ export const HeaderApp = styled.div`
     align-items: center;
     height: 4rem;
   }
-
-
-  .login {
-    color: #333;
-    display: flex;
-    align-items: center;
-  }
-
-  .login::after {
-    content: '';
-    display: inline-block;
-    width: 14px;
-    height: 17px;
-    background: url('../Assets/usuario.svg') no-repeat center center;
-    margin-left: 0.5rem;
-    position: relative;
-    top: -1px;
-  }
-  `
+`
 export const TextHeader = styled.div`
-  color: orange;
   padding: 1rem;
 
 `
