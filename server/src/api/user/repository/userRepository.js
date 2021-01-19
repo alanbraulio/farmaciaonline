@@ -4,6 +4,7 @@ const sql = require('mssql');
 const SQL_SELECT_QUERY = `SELECT id, name, email, password, cargo, active FROM Users`;
 const SQL_INSERT_QUERY = `INSERT INTO Users (name, email, password, cargo, active) VALUES (@name, @email, @password, @cargo, @active)`;
 const SQL_DELETE_QUERY = `DELETE FROM Users WHERE id=@id`;
+// const SQL_SELECT_LOGIN = `SELECT id, name, email, password, cargo, active FROM Users WHERE email = @email AND password = @password`;
 
 exports.get_all_users = async () => {
     try{
@@ -91,3 +92,19 @@ exports.delete_user = async(id) => {
         return null;
     }              
 }
+
+// exports.login_user = async(email, password) =>{
+//     try{
+//         const dbClient = await getConnection();
+//         const request = dbClient.request();
+
+//         request.input('email', sql.VarChar, email);
+//         request.input('password', sql.VarChar, password);
+
+//         const result = await request.query(SQL_SELECT_LOGIN);
+//         return result.recordsets[0];
+
+//     } catch(error) {
+//         return null;
+//     }
+// }

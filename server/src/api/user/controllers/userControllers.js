@@ -1,4 +1,5 @@
 const payloadCheck = require('payload-validator');
+var jwt = require('jsonwebtoken');
 
 const userRepository = require('../repository/userRepository');
 const responses = require('../../common/responses/responses');
@@ -80,3 +81,18 @@ exports.delete_user = async (req, res) => {
         return responses.response(res, {status: 500, message:"Falha ao deletar o Usuário!"})
     }
 }
+
+// exports.user_Login = async (req, res) =>{
+//     try{
+//         const { id } = await userRepository.login_user(req.body.email, req.body.password);
+//         if(req.body.email && req.body.password){
+//                 var token = jwt.sign({id}, process.env.SECRET, {
+//                 expiresIn: 300 // expires in 5min
+//         });
+//         res.status(200).send({ auth: true, token: token });
+//         }
+//     }  
+//     catch(err){
+//         return responses.response(res, {status: 500, message:'Falha ao fazer Login!'})
+//     }
+// }
