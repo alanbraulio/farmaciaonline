@@ -1,6 +1,6 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
-// import LoginForm from './LoginForm';
+import { Routes, Route } from 'react-router-dom';
+import LoginForm  from './LoginForm';
 import LoginCreate from './LoginCreate';
 import LoginPasswordLost from './LoginPasswordLost';
 import LoginPasswordReset from './LoginPasswordReset';
@@ -11,7 +11,7 @@ const Login = () => {
     <section className={styles.login}>
       <div className={styles.forms}>
         <Routes>
-          {/* <Route path="/" element={<LoginForm />} /> */}
+          <Route path="/" element={<LoginForm />} />
           <p>Oi Ui</p>
           <Route path="criar" element={<LoginCreate />} />
           <Route path="perdeu" element={<LoginPasswordLost />} />

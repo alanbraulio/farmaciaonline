@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input/Input';
-import CustomButton from '../Forms/CustomButton/CustomButton';
+import Button from '../Forms/CustomButton/CustomButton';
 import styles from './LoginForm.module.css';
-import stylesBtn from '../Forms/CustomButton/CustomButton.module.css';
+import stylesBtn from '../Forms/CustomButton/Button.module.css';
 
 const LoginForm = () => {
 
@@ -18,7 +18,7 @@ const LoginForm = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username"/>
         <Input label="Senha" type="password" name="password" />
-          <CustomButton>Entrar</CustomButton>
+          <Button>Entrar</Button>
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
         Perdeu a Senha?

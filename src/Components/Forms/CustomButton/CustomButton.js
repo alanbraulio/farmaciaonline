@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './CustomButton.module.css';
+import styles from './Button.module.css';
 
-const CustomButton = ({ children, ...props }) => {
+const Button = ({ children, ...props }) => {
   return (
     <button {...props} className={styles.button}>
       {children}
@@ -9,4 +9,4 @@ const CustomButton = ({ children, ...props }) => {
   );
 };
 
-export default CustomButton;
+export default Button;
