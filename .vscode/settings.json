@@ -1,8 +1,0 @@
-{
-  "appService.zipIgnorePattern": [
-    "node_modules{,/**}",
-    ".vscode{,/**}"
-  ],
-  "appService.deploySubpath": ".",
-  "appService.defaultWebAppToDeploy": "/subscriptions/5f0331df-727d-4773-b018-1ca6be169eb5/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/farmonline-prd"
-}
