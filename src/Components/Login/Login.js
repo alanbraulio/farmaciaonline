@@ -12,7 +12,7 @@ const Login = () => {
       <div className={styles.forms}>
         <Routes>
           {/* <Route path="/" element={<LoginForm />} /> */}
-          <p>Oi to bem</p>
+          <p>Oi</p>
           <Route path="criar" element={<LoginCreate />} />
           <Route path="perdeu" element={<LoginPasswordLost />} />
           <Route path="resetar" element={<LoginPasswordReset />} />
