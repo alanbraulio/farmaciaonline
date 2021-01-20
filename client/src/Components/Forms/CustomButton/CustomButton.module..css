@@ -1,6 +1,4 @@
-import styled from 'styled-components'
-
-export const Button = styled.div`
+.button {
   font-size: 1rem;
   font-family: var(--type-first);
   cursor: pointer;
@@ -12,16 +10,15 @@ export const Button = styled.div`
   padding: 0.8rem 1.2rem;
   box-sizing: border-box;
   transition: 0.1s;
+}
 
-  &:hover,
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
-  }
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+}
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: wait;
-  }
-
-`
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}

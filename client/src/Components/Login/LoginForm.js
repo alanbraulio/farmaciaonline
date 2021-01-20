@@ -1,29 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../Forms/Input/Input';
-import CustomButton  from '../Forms/CustomButton/CustomButton';
-import {LoginFormContent} from './Styles';
+import CustomButton from '../Forms/CustomButton/CustomButton';
+import styles from './LoginForm.module.css';
+import stylesBtn from '../Forms/CustomButton/CustomButton.module.css';
 
 const LoginForm = () => {
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    console.log('oi')
+  }
+
   return (
-    <LoginFormContent className="animeLeft">
+    <section className="animeLeft">
       <h1 className="title">Login</h1>
-      <form className="form">
-        <Input label="Usuário" type="text" name="username"  />
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <Input label="Usuário" type="text" name="username"/>
         <Input label="Senha" type="password" name="password" />
           <CustomButton>Entrar</CustomButton>
       </form>
-      <Link className="perdeu" to="/login/perdeu">
+      <Link className={styles.perdeu} to="/login/perdeu">
         Perdeu a Senha?
       </Link>
-      <div className="cadastro">
-        <h2 className="subtitle">Cadastre-se</h2>
+      <div className={styles.cadastro}>
+        <h2 className={styles.subtitle}>Cadastre-se</h2>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
-        <Link className="buttonCadastro" to="/login/criar">
+        <Link className={stylesBtn.button} to="/login/criar">
           Cadastro
         </Link>
       </div>
-    </LoginFormContent>
+    </section>
   );
 };
 

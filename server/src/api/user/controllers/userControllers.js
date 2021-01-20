@@ -48,22 +48,17 @@ exports.create_user = async (req, res) => {
 
 exports.update_user = async (req, res) => {
     try{
-    
         if (req.body.name || req.body.email || req.body.password || req.body.cargo || req.body.active) {
-            
             updateFaq = await userRepository.update_user(req.params.id, req.body.name,  req.body.email, req.body.password, req.body.cargo, req.body.active);
 
             if(updateFaq){
                 return responses.response(res, {status: 200, message:'Usuário editado com sucesso!'});
-
             } else {
                 throw null
             }
-
         } else {
             return responses.response(res, {status: 400, message:'Por favor, preencha ao menos um campo para ser alterado'})
         }
-
     }catch(err){
         return responses.response(res, {status: 500, message:'Falha ao editar o Usuário!'})
     }

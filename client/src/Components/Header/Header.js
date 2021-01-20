@@ -1,21 +1,20 @@
-import React  from 'react';
-import { HeaderApp, TextHeader } from './Styles.js';
+import React from 'react';
+import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-// import { UserContext } from '../UserContext';
 
 const Header = () => {
 
   return (
-    <HeaderApp>
-      <nav className={'container'}>
-          <Link to="/" aria-label="Home - Farmacia Online">
-            <TextHeader>Home</TextHeader>
-          </Link>
-          <Link to="/login">
-            <TextHeader>Login</TextHeader>
-          </Link>
+    <header className={styles.header}>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to="/" aria-label="Dogs - Home">
+          Home
+        </Link>
+        <Link className={styles.login} to="/login">
+          Login 
+        </Link>
       </nav>
-    </HeaderApp>
+    </header>
   );
 };
 
