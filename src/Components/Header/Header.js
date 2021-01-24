@@ -10,7 +10,6 @@ const Header = () => {
     getToken() && setUserLogado(true);
   },[])
   
-  
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
