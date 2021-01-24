@@ -20,7 +20,6 @@ const Header = () => {
         <Link className={styles.login} to="/" onClick={logout}>
         Sair  
         </Link>
-        
         :
         <Link className={styles.login} to="/login">
           Login 
