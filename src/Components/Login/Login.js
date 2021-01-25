@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LoginForm  from './LoginForm';
-import LoginCreate from './LoginCreate';
+import Cadastro from '../Cadastro/Cadastro';
 import LoginPasswordLost from './LoginPasswordLost';
 import LoginPasswordReset from './LoginPasswordReset';
 import styles from './Login.module.css';
@@ -13,7 +13,7 @@ const Login = () => {
         <Routes>
           <Route path="/" element={<LoginForm />} />
           <p>Oi Ui</p>
-          <Route path="criar" element={<LoginCreate />} />
+          <Route path="criar" element={<Cadastro />} />
           <Route path="perdeu" element={<LoginPasswordLost />} />
           <Route path="resetar" element={<LoginPasswordReset />} />
         </Routes>
