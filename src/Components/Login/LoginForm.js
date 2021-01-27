@@ -59,39 +59,39 @@ const LoginForm = () => {
   }
     
 
-    return (
-      tokenGuardado ?
-      <Navigate to="/" /> :
-      <React.Fragment>
-        <CustomSnackbar 
-          abreNotificacao={abreNotificacao}
-          fecharNotificacao={fecharNotificacao}
-          mensagemDeResultado={mensagemDeResultado}
-          resultadoRequisicao={resultadoRequisicao}
-        />
-        <section className="animeLeft">
-          <h1 className="title">Login</h1>
-          <form className={styles.form}>
-            <Input label="Email" type="text" name="email" onChange={({target}) => setEmail(target.value)}/>
-            <Input label="Senha" type="password" name="password" onChange={({target}) => setPassword(target.value)} />
-          </form>
+  return (
+    tokenGuardado ?
+    <Navigate to="/dashboard" /> :
+    <React.Fragment>
+      <CustomSnackbar 
+        abreNotificacao={abreNotificacao}
+        fecharNotificacao={fecharNotificacao}
+        mensagemDeResultado={mensagemDeResultado}
+        resultadoRequisicao={resultadoRequisicao}
+      />
+      <section className="animeLeft">
+        <h1 className="title">Login</h1>
+        <form className={styles.form}>
+          <Input label="Email" type="text" name="email" onChange={({target}) => setEmail(target.value)}/>
+          <Input label="Senha" type="password" name="password" onChange={({target}) => setPassword(target.value)} />
+        </form>
 
-          <Button onClick={login}>Fazer Login</Button>
+        <Button onClick={login}>Fazer Login</Button>
 
-          <Link className={styles.perdeu} to="/login/perdeu">
-            Perdeu a Senha?
+        <Link className={styles.perdeu} to="/login/perdeu">
+          Perdeu a Senha?
+        </Link>
+        <div className={styles.cadastro}>
+          <h2 className={styles.subtitle}>Cadastre-se</h2>
+          <p>Ainda não possui conta? Cadastre-se no site.</p>
+          <Link className={stylesBtn.button} to="/login/criar">
+            Cadastro
           </Link>
-          <div className={styles.cadastro}>
-            <h2 className={styles.subtitle}>Cadastre-se</h2>
-            <p>Ainda não possui conta? Cadastre-se no site.</p>
-            <Link className={stylesBtn.button} to="/login/criar">
-              Cadastro
-            </Link>
-          </div>    
-        </section> 
-      </React.Fragment>
-    );
-  }
+        </div>    
+      </section> 
+    </React.Fragment>
+  );
+}
 
 
 export default LoginForm;
