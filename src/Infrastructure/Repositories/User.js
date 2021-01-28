@@ -5,8 +5,8 @@ export const repoGetUser = (userId) => {
   return new Promise(async (resolve, reject) => {
       await api.get('/api/user/' + userId)
         .then(async res => {
-          resolve(res.data)
-          return res.data;
+          resolve(res.data.value[0])
+          return res.data.value[0];
         }).catch((error) => {
               console.log('error', error)
               reject(error);
@@ -16,11 +16,11 @@ export const repoGetUser = (userId) => {
 
 export const doGetAllUsers = () => {
 
-  return new Promise((resolve, reject) => {
-    api.get('/api/user/')
+  return new Promise(async (resolve, reject) => {
+    await api.get('/api/user/')
     .then(async res => {
-      resolve(res.data)
-      return res.data;
+      resolve(res.data.value)
+      return res.data.value;
     }).catch((error) => {
       reject(error);
     });

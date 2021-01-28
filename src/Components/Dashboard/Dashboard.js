@@ -6,18 +6,23 @@ import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
 
-  const {state} = React.useContext(Store);
+  const { state } = React.useContext(Store);
   
+
   return(
     <>
       <div>
         Dashboard
         {
           state.user &&
-        <Link className={styles.login} to="/" onClick={logout}>
-          Sair  
-        </Link>
+          <>
+            <Link className={styles.login} to="/" onClick={logout}>
+              Sair  
+            </Link>
+            <p>{`Olá ${state.user.name}!!`}</p>
+          </>
         }
+        
       </div>
     </>
   );
