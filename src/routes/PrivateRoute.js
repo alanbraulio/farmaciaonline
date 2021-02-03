@@ -32,7 +32,7 @@ function PrivateRoute (props) {
     }
   }
     fetchData();
-  },[dispatch, state.user]);
+  },[]);
 
 
   if(authentication) return <Route {...props}/>;
