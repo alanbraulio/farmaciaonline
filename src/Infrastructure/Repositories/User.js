@@ -5,7 +5,6 @@ export const repoGetUser = (userId) => {
   return new Promise(async (resolve, reject) => {
       await api.get('/api/user/' + userId)
         .then(async res => {
-          console.log(res, 'resposta api')
           resolve(res.data.value[0])
           return res.data.value[0];
         }).catch((error) => {
