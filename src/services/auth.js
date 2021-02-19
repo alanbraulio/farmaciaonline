@@ -11,9 +11,14 @@ export const getAuthentication = () => {
       if (res.status === 200) {
         user_id = res.data.decoded.id;
         return user_id;
+      }else{
+        localStorage.clear();
+        <Navigate to="/"/>
       }
     })
     .catch((err) => {
+      localStorage.clear();
+      <Navigate to="/"/>
       return false;
     });
 };

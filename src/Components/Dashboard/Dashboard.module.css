@@ -1,0 +1,52 @@
+.login{
+  color:#fff;
+  font-size: 14px;
+  padding:1em;
+}
+.menuButton{
+  margin-right: 1em;
+}
+
+.title{
+  flex-grow:1;
+}
+
+.menu{
+  font-size:14px;
+  font-weight: bold;
+  color:#fff;
+  padding:1em;
+  list-style:none;
+}
+
+.menu li{
+  position:relative;
+  display: inline-block;
+  padding: 1em;
+  box-sizing: border-box;
+  margin-right: 1em;
+}
+
+.menu li ul{
+  position:absolute;
+  top:50px;
+  left:0;
+  background-color:#3F51B5;
+  border: 1px solid #000;
+  display:none;
+  text-align: center;
+}
+
+.menu li:hover ul, .menu li.over ul{
+  display:block;
+}
+
+.menu li ul li:hover{
+  cursor: pointer;
+  width: 100%;
+  background-color: #000;
+}
+
+.menu li ul li{
+  width: 100%;
+}

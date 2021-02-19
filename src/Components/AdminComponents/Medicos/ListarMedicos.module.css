@@ -1,0 +1,37 @@
+.table{
+  min-width: 700;
+  margin-top: '30px';
+  border-spacing:'0px';
+ 
+}
+.row{
+  font-size: '14px';
+  font-weight:'400';
+  color:'rgba(0, 0, 0, 0.87)';
+  text-align:'center';
+}
+
+th{
+  padding:'10px !important';
+  font-size:'16px';
+  color:'#fff';
+  font-weight:'normal !important';
+  background-color: 'pink';
+  border-collapse:'initial !important';
+  border-spacing:'0px !important';
+
+}
+
+@media (max-width: 968px){
+  .table{
+    min-width:'fit-content'
+  }
+  .row{
+    border:'none !important'
+  }
+  td{
+    white-space:'initial !important';
+    margin:'1em 0 !important';
+    word-break: 'break-word';
+  }
+}

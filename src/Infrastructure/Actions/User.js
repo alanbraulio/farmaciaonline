@@ -53,19 +53,13 @@ export const doGetAllUsers = async (dispatch) => {
   });
 }
 
-export const doCreateUser = async (dispatch, userInfos, allUsers) => {
-  createUser(userInfos, allUsers).then(obj => {
-    return dispatch({
-      type: 'CREATE_USER',
-      payload: obj
-    });
-  }).catch((error) => {
+export const doCreateUser = async (dispatch, userInfos) => {
+  try{
+    return createUser(userInfos)
+  }catch(error){
     return dispatch({
       type: 'REQUEST_ERROR',
       payload: error
-
     });
-
-  });
+  }
 }
-
