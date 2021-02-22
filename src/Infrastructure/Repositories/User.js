@@ -20,6 +20,7 @@ export const doGetAllUsers = () => {
     await api
       .get("/api/user/")
       .then(async (res) => {
+        console.log(res, 'resposta api')
         resolve(res.data.value);
         return res.data.value;
       })
@@ -49,15 +50,18 @@ export const repoCreateUser = (userInfos) => {
 };
 
 export const repoDeleteUser = (userId) => {
-  return new Promise((resolve, reject) => {
-    api
-      .put(`/api/user/${userId}`)
-      .then(async (res) => {
-        resolve(res.data);
-        return res.data;
-      })
-      .catch((error) => {
-        reject(error);
-      });
+
+  return new Promise((resolve) => {
+    let response = null;
+    api.delete(`/api/user/${userId}`)
+    .then(async res => {
+      resolve(res)    
+      return res;
+    }).catch((error) => {
+      response = error.response.data;
+    }).finally (() => {
+      resolve(response);
+      return response;
+    });
   });
-};
+}

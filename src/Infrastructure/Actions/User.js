@@ -18,23 +18,16 @@ export const doGetUser = async (dispatch, userId, currentUser = true) => {
 };
 
 
-export const doDeleteUser = async (dispatch, idUser, allUsers) => {
-  deleteUser(idUser, allUsers).then(users => {
-
+export const doDeleteUser = async (dispatch, userId) => {
+  try{
+    return deleteUser(userId)
+  }catch(error){
     return dispatch({
-      type: 'ALL_USERS',
-      payload: users
+    type: 'REQUEST_ERROR',
+    payload: error
     });
-
-  }).catch((error) => {
-
-    return dispatch({
-      type: 'REQUEST_ERROR',
-      payload: error
-    });
-
-  });
-};
+  }
+}
 
 export const doGetAllUsers = async (dispatch) => {
   await getAllUsers().then(users => {

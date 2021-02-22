@@ -23,17 +23,15 @@ export const createUser = async (userInfos) => {
   }
 };
 
-export const deleteUser = async (userId, allUsers) => {
+export const deleteUser = async (userId) => {
   try {
-    await repoDeleteUser(userId);
-    allUsers = allUsers.filter((user) => {
-      return user._id !== userId;
-    });
-    return allUsers;
+    const response = await repoDeleteUser(userId);
+    return response;
   } catch (error) {
     throw error.response;
   }
 };
+
 
 export const getAllUsers = async () => {
   try {

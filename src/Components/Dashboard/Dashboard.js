@@ -8,7 +8,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import ListarMedicos  from '../AdminComponents/Medicos/ListarMedicos';
 import AdicionarMedico  from '../AdminComponents/Medicos/AdicionarMedico';
 import AdicionarFarmaceutico  from '../AdminComponents/Farmaceuticos/AdicionarFarmaceutico';
@@ -47,12 +46,6 @@ const Dashboard = () => {
             </li>
             <li></li>
           </ul>
-          
-            {/* <Link className={styles.login} to="/lista-medicos">Lista de Médicos</Link>
-            <Link className={styles.login} to="/lista-farmaceuticos">Lista de Farmacêuticos</Link>
-            <Link className={styles.login} to="/lista-pacientes">Lista de Pacientes</Link>
-            <Link className={styles.login} to="/lista-receitas">Lista de Receitas</Link>
-            <Link className={styles.login} to="/receitas-validadas">Lista de Receitas Validadas</Link> */}
           </>
         );
       case 'Farmacêutico':
@@ -87,9 +80,8 @@ const Dashboard = () => {
           <>
               <AppBar position="static">
                 <Toolbar>
-                <IconButton edge="start" className={styles.menuButton} color="inherit" aria-label="menu">
-                  <h2 onClick={onClickLogo}>PHARMACY</h2>
-                  {/* <MenuIcon /> */}
+                <IconButton edge="start" className={styles.menuButton} color="inherit" aria-label="menu" onClick={onClickLogo}>
+                  <h2>PHARMACY</h2>
                 </IconButton>
 
                 <Typography variant="h6" className={styles.title}>
